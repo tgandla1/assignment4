@@ -1,63 +1,152 @@
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en'>
-<head>
-<title>Part2</title>
-<meta http-equiv='Content-Type' content='text/html' charset='UTF-8' />
-<link rel='stylesheet' type='text/css' href='part2.css'></link>
-</head>
-<body>
-<div class="div1">
-<h1>part2<br/> Calendar
-<?php date_default_timezone_set("America/New_York"); echo date("M-d-Y h:i:s A"); ?></h1>
-<table id="table1">
-	<tr class="header1">
-		<td id="td1">Hours</td><td>Thiru</td><td>Hemanth</td><td>Avinash</td>
-	</tr>
-<?php
-	date_default_timezone_set("America/New_York");
-	$hours_to_show=12;
-	$hourCounter=0;
-	$counter = 0;
-	$b=true; 
-	$functionDay=date("D", strtotime('+'.$counter.' days'));
-function get_hour_string($timestamp){
-		$timeStr="";
-		if($timestamp>=12&&$timestamp<=23){
-			$timeStr.=$timestamp-12;
-			$timeStr.=" p.m.";
-		}elseif($timestamp==0){
-			$timeStr.=12;
-			$timeStr.=" a.m.";
-		}else{
-		$timeStr.=$timestamp;
-		$timeStr.=" a.m.";
-		}
-		return $timeStr;
-	}
+<!DOCTYPE html>
 
-	?>
-<?php
-$hours_to_show=12;
-	for($j=1;$j<=$hours_to_show;$j++)
-		{
-		if($b){
-			echo "<tr class='even'>";
-		}else{
-			echo "<tr class='odd'>";
-		}
-		echo "<td class='td1'>".get_hour_string(date("G", strtotime('+'.$hourCounter.' hours')))."</td>";
-		echo "<td class='td1' </td>";
-		echo "<td class='td1' </td>";
-		echo "<td class='td1' </td>";
-		echo "</tr>";
-		$hourCounter++;
-		$b=!$b;
-	}
-	
-	date_default_timezone_set("America/New_York");
-?>
-</table>	
-</div>	
+<html>
+
+    <link rel="stylesheet" type="text/css" href="part2.css" />
+
+    <head>
+
+        <title>Calendar</title>
+
+    </head>
+
+    <body>
+
+        <?php
+$hours_to_show = 12;
+            date_default_timezone_set('America/New_York');
+ 
+
+          
+
+            $time = time();
+			
+ $current = date("g:i a",$time);   
+
+            $day = date("l", $time);
+
+            $date = date("D, F j, Y", $time);                                                  
+
+           
+            function get_hour_string($time){
+
+                $hourinsec = date("g", $time);
+
+                $ampm = date("a", $time);
+
+                return "$hourinsec:00 $ampm";
+
+            }
+if(isset($_POST['submit'])){
+
+               $hours_to_show = $_POST["hours_to_show"];
+
+           }
+            
+        ?>
+
+      
+
+        <div class="div1">
+
+            <h1>
+
+                <?php
+
+                    echo "<br>Calendar<br>";
+
+                    echo "<br><i>Today  </i>: $day";
+
+                    echo "<br><i>Date </i>$date";
+
+                    echo "<br> <i> Time  </i> $current <br>";
+
+                ?>
+
+               
+
+            </h1>
+
+			,<h2> <form method="POST">
+
+                   Display <input type="number" name="hours_to_show">
+
+                   <input type="submit" value="submit" name = "submit">
+
+               </form>
+			   </h2>
+            <table id="table1">
+
+            <tr>  
+
+                 
+
+                <th class='hd1'></th>
+
+                <th class='header1'>Avinash</th>
+
+                <th class='header1'>Sunveer</th>
+
+                <th class='header1'>Prasad</th>
+
+            </tr>
+
+            </tr>
+
+            
+
+        <?php
+
+        for ($x = 0; $x <= $hours_to_show; $x++) {
+
+            $maintime = get_hour_string($time + $x * 3600 );
+            if ($x % 2 == 0) {
+
+                echo "<tr class='odd'> \n ";
+
+                echo "<td class='hd1'>
+
+                            <b>$maintime</b>
+
+                      </td>
+
+                      <td> </td>                      
+
+                      <td> </td>
+
+                      <td> </td> \n";
+
+                echo "</tr> \n";
+
+            }
+
+            if ($x % 2 != 0) {
+
+                echo "<tr class='even'> \n";
+
+                echo "<td class='hd1'>
+
+                            <b>$maintime</b>
+
+                      </td>
+
+                      <td> </td>
+
+                      <td> </td>
+
+                      <td> </td> \n";
+
+                echo "</tr> \n";
+
+            }
+
+        }
+
+        ?>  
+
+            </table>
+
+        </div>
 <p>
 <a href="http://jigsaw.w3.org/css-validator/check/referer">
     <img style="border:0;width:88px;height:31px"
@@ -71,9 +160,7 @@ $hours_to_show=12;
 									<img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML" />
 								</a>
 							</p>
-       
+    </body>
 
-</body>
 </html>
-
 
