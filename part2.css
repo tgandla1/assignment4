@@ -1,90 +1,101 @@
 
 
 
+
 body
+
 {
-	background-color:	 #00FFFF;
-	font-family:Comic Sans MS;
-	font-size:16px;
-	
+
+   background-color:#00FFFF  ;
+
+   font-family:Georgia;
+
+   font-size:12px;
+    color:#FDFEFE  
+;
+
 }
 
-.div1
-{
-	
-	border:5px solid #000;
-	font:14px Comic Sans MS;
-	margin:20px auto;
-	padding:0;
-	width:602px;
-}
 
-h1
-{
-	font:18pt Comic Sans MS;
-	margin-left:auto;
-	margin-right:auto;
-	text-align:center;
-}
 
 #table1
+
 {
-	
-border-collapse:collapse;
-	border:1px solid black;
-	margin:1px 1px 1px;
-	text-align: center;
-	width: 600px;
+
+   border-collapse:collapse;
+
+   border-top:7px;
+
+   margin:5px 10px 10px;
+
 }
 
 #table1 .header1
-{
-	color:#000;
-	font-size:20px;
-	font-weight:400;
-	padding-left:5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	text-align:center;
-	background-color :#00FF00;
-}
 
-#table1 .header1 td
 {
-	width:25%;
-	border: 1px solid black;
-	padding-right: 10px;
-}
 
-#table1 .header1:first-child
-{
-	width:60px;
+   color:#85C1E9;
+
+   font-size:24px;
+
+   font-weight:400;
+
+   padding-left:5px;
+
+   text-align:left;
+
+   text-decoration:none;
+
+   width:220px;
+
 }
 
 #table1 .even
+
 {
-	background-color:#FF0000;
-	height:40px;
+
+   background-color:#FFFF00    ;
+
+   height:40px;
+
 }
 
 #table1 .odd
+
 {
-	background-color:#FFFF00;
-	height:40px;
+
+   background-color:#FF0000  ;
+
+   height:40px;
+
 }
 
-#table1 .td1
+#table1 .hd1
+
 {
-	text-align:center;
-	width:60px;
-	Border-right: 1px solid black;
-	padding-right: 10px;
+
+   text-align:right;
+
+   width:60px;
+
 }
 
+.div1
 
+{
 
+   
 
+   border:5px solid #F5B7B1  ;
 
+   font:12px Verdana, Arial, Helvetica, sans-serif;
 
+   margin:20px auto;
+
+   padding:0;
+
+   width:760px;
+
+}
 
 
